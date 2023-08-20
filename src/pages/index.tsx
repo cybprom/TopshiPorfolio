@@ -9,7 +9,7 @@ import Contact from "../../components/Contact";
 
 export default function Home() {
   return (
-    <div className="bg-[rgb(36,36,36)] scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 text-white snap-y snap-mandatory  z-0 h-screen w-screen overflow-y-scroll overflow-x-hidden">
+    <section className="bg-[rgb(36,36,36)] scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 text-white snap-y snap-mandatory  z-0 h-screen w-screen overflow-y-scroll overflow-x-hidden">
       <Head>
         <title className="">Temitope portfolio</title>
       </Head>
@@ -38,6 +38,6 @@ export default function Home() {
       <section id="contact" className="snap-start">
         <Contact />
       </section>
-    </div>
+    </section>
   );
 }
