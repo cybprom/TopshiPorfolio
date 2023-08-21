@@ -6,6 +6,9 @@ import Experience from "../../components/Experience";
 import Skills from "../../components/Skills";
 import Projects from "../../components/Projects";
 import Contact from "../../components/Contact";
+import Link from "next/link";
+import Image from "next/image";
+import temitope from "../../public/temitope.jpeg";
 
 export default function Home() {
   return (
@@ -38,6 +41,20 @@ export default function Home() {
       <section id="contact" className="snap-start">
         <Contact />
       </section>
+
+      <Link href="#hero">
+        <footer className="w-full sticky bottom-5 cursor-pointer">
+          <div className="items-center flex  justify-center">
+            <Image
+              src={temitope}
+              alt="temitope image"
+              height={20}
+              width={20}
+              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 "
+            />
+          </div>
+        </footer>
+      </Link>
     </section>
   );
 }
