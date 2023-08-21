@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       <Link href="#hero">
-        <footer className="w-full sticky bottom-5 cursor-pointer">
+        <footer className="w-full sticky bottom-10 sm:bottom-5 cursor-pointer">
           <div className="items-center flex  justify-center">
             <Image
               src={temitope}
