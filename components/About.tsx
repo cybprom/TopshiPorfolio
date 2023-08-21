@@ -2,10 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import Temitope from "../public/temitope.jpeg";
 import Image from "next/image";
+import { pageInfo } from "../typings";
+import { urlfor } from "@/lib/sanity";
 
-type Props = {};
+type Props = {
+  pageinfo: pageInfo;
+};
 
-const About = (props: Props) => {
+const About = ({ pageinfo }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,7 +20,9 @@ const About = (props: Props) => {
       <Image
         className="mt-14 md:mb-0  md:w-64 md:h-72 flex xl:w-[500px] xl:h-[500px] flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg "
         alt="temitope picture"
-        src={Temitope}
+        height={100}
+        width={1000}
+        src={urlfor(pageinfo?.profilePic).url()}
       />
 
       <div className="space-y-6 px-0 md:px-10">
@@ -25,20 +31,13 @@ const About = (props: Props) => {
         </h3>
         <h4 className="text-xl font-semibold">
           Here is a
-          <span className="underline decoration-[#F7BA0A]/60"> Litle </span>
+          <span className="underline decoration-[#F7BA0A]/60 tracking-[3px]">
+            {" "}
+            Litle{" "}
+          </span>
           Background
         </h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-          voluptate consectetur eaque. Corporis magni repellendus itaque
-          voluptate consequatur consectetur debitis ratione molestias
-          dignissimos aliquam expedita, optio veritatis sed facere ullam.
-          Corporis et velit ut totam deleniti laudantium suscipit, nihil vel,
-          aspernatur neque repellendus amet aperiam ipsa illo voluptatem sequi
-          id doloribus ipsum sed? Reiciendis, vel sunt. Aut necessitatibus
-          cupiditate consequuntur? Repudiandae eveniet perspiciatis alias cum,
-          doloribus itaque perferendis dolorum libero,
-        </p>
+        <p>{pageinfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

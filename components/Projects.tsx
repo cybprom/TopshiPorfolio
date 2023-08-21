@@ -2,11 +2,12 @@ import Image from "next/image";
 import React from "react";
 import temitope from "../public/temitope.jpeg";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlfor } from "@/lib/sanity";
 
-type Props = {};
+type Props = { project: Project[] };
 
-function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+function Projects({ project }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -15,9 +16,9 @@ function Projects({}: Props) {
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row justify-evenly mx-auto items-center"
     >
       <div className="relative w-full scrollbar-thin flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 ">
-        {projects.map((project, i) => (
+        {project.map((projects, i) => (
           <div
-            key={i}
+            key={projects._id}
             className=" w-screen flex-shrink-0 flex snap-center flex-col space-y-5 items-center p-3 lg:p-20  justify-center md:p-44 h-screen"
           >
             <motion.div
@@ -28,7 +29,7 @@ function Projects({}: Props) {
               viewport={{ once: true }}
             >
               <Image
-                src={temitope}
+                src={urlfor(projects?.image).url()}
                 height={200}
                 width={200}
                 alt="project images"
@@ -38,19 +39,12 @@ function Projects({}: Props) {
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-xl text-center font-semibold">
                 <span className="underline decoration-[#F7AB0A]/50">
-                  Case Study {i + 1} of {projects.length}{" "}
+                  Case Study {i + 1} of {project.length}
                 </span>
-                : UPs CLONE
+                : {projects?.title}
               </h4>
               <p className="  text-sm lg:text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis nisi, debitis blanditiis dicta numquam architecto
-                suscipit dolore necessitatibus, saepe quas voluptatum? Fuga
-                dolore cum dignissimos deleniti explicabo aliquam, saepe
-                officiis? Recusandae eligendi laborum neque, nihil voluptate
-                totam sequi unde asperiores quasi soluta ipsa voluptatum velit
-                est possimus distinctio exercitationem ab quos? Ullam
-                perferendis tenetur id laudantium dolores quos provident{" "}
+                {projects?.summary}
               </p>
             </div>
           </div>

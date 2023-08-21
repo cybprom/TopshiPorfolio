@@ -4,15 +4,19 @@ import BackgroundCircles from "./BackgroundCircles";
 import temitope from "../public/temitope.jpeg";
 import Image from "next/image";
 import Link from "next/link";
-type Props = {};
+import { pageInfo } from "../typings";
+import { urlfor } from "@/lib/sanity";
+type Props = {
+  pageinfo: pageInfo;
+};
 
-export default function Hero({}: Props) {
+export default function Hero({ pageinfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      "Hi My name is Temitope David",
-      "i love Javascript",
-      "<coffee love Coffee.tsx></coffee>",
-      "i am a problem solver",
+      `Hi My name is ${pageinfo?.name}`,
+      "I am Frontend Developer ",
+      "<Typescript>I Write </Typescript>",
+      "I love animations",
     ],
     loop: true,
     delaySpeed: 2000,
@@ -23,12 +27,14 @@ export default function Hero({}: Props) {
       <Image
         className="relative h-32 w-32 mx-auto rounded-full object-cover"
         alt="temitope pciture"
-        src={temitope}
+        width={100}
+        height={100}
+        src={urlfor(pageinfo?.heroImage).url()}
       ></Image>
 
       <div className="z-20">
         <h2 className="uppercase text-gray-500 text-xs lg:text-sm pb-2 tracking-[8px] lg:tracking-[15px]">
-          Frontend developer
+          {pageinfo?.role}
         </h2>
         <h1 className="text-2xl lg:text-3xl font-semibold px-10">
           <span>{text}</span>

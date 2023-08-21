@@ -5,6 +5,11 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ["www.google.com", "encrypted-tbn0.gstatic.com"], // Add the necessary domains here
+    domains: [
+      "www.google.com",
+      "encrypted-tbn0.gstatic.com",
+      "cdn.sanity.io",
+      "localhost",
+    ], // Add the necessary domains here
   },
 };
