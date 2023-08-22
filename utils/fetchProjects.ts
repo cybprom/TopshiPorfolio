@@ -12,5 +12,3 @@ export const fetchProjects = async () => {
   const projectData: Project[] = await client.fetch(query);
   return projectData;
 };
-
-fetchProjects();

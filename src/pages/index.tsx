@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "../../components/Header";
+import type { GetStaticProps } from "next";
 import Hero from "../../components/Hero";
 import About from "../../components/About";
 import Experiences from "../../components/Experiences";
@@ -15,37 +16,24 @@ import { fetchskills } from "../../utils/fetchskills";
 import { fetchExperience } from "../../utils/fetchExperience";
 import { fetchsocials } from "../../utils/fetchsocials";
 import { fetchProjects } from "../../utils/fetchProjects";
-import { useEffect, useState } from "react";
 
-export default function Home() {
-  const [pageInfo, setPageInfo] = useState<pageInfo | null>(null);
-  const [socials, setSocials] = useState<Socials[]>([]);
-  const [experience, setExperience] = useState<Experience[]>([]);
-  const [skill, setSkill] = useState<Skill[]>([]);
-  const [project, setProject] = useState<Project[]>([]);
+type Props = {
+  pageInfo: pageInfo;
+  experience: Experience[];
+  skill: Skill[];
+  project: Project[];
+  socials: Socials[];
+};
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const pageInfoData = await fetchPageInfo();
-      const skillData = await fetchskills();
-      const experienceData = await fetchExperience();
-      const socialsData = await fetchsocials();
-      const projectData = await fetchProjects();
-
-      setPageInfo(pageInfoData);
-      setSkill(skillData);
-      setExperience(experienceData);
-      setSocials(socialsData);
-      setProject(projectData);
-    };
-
-    fetchData();
-  }, []);
-
-  if (!pageInfo) {
-    return <div>Loading...</div>;
-  }
-
+export default function Home({
+  pageInfo,
+  socials,
+  experience,
+  skill,
+  project,
+}: Props) {
+  console.log(skill);
+  console.log(experience);
   return (
     <section className="bg-[rgb(36,36,36)] scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 text-white snap-y snap-mandatory  z-0 h-screen w-screen overflow-y-scroll overflow-x-hidden">
       <Head>
@@ -93,3 +81,22 @@ export default function Home() {
     </section>
   );
 }
+
+export const getStaticProps = async () => {
+  const pageInfo = fetchPageInfo();
+  const skill = fetchskills();
+  const experience = fetchExperience();
+  const socials = fetchsocials();
+  const project = fetchProjects();
+
+  return {
+    props: {
+      pageInfo,
+      socials,
+      experience,
+      skill,
+      project,
+    },
+    revalidate: 10,
+  };
+};
