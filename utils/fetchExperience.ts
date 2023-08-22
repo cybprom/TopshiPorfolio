@@ -9,5 +9,3 @@ export const fetchExperience = async () => {
 
   return experience;
 };
-
-fetchExperience();
