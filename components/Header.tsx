@@ -3,6 +3,7 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Socials } from "../typings";
+import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 
 type Props = {
   socials: Socials[];
@@ -32,14 +33,9 @@ export default function Header({ socials }: Props) {
           initial={{ x: 500, opacity: 0, scale: 0.5 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="flex flex-row items-center text=gray-400 cursor-pointer"
+          className="flex flex-row items-center text-gray-400 cursor-pointer gap-x-3"
         >
-          <SocialIcon
-            url="https://www.youtube.com/temitopedavid"
-            bgColor="transparent"
-            fgColor="gray"
-            network="email"
-          />
+          <ChatBubbleLeftIcon className="text-gray-400 h-5 w-5 " />
           <p className="hidden md:inline-flex uppercase text-sm text-gray-400">
             get in touch
           </p>
