@@ -1,15 +1,14 @@
 import { Socials } from "../typings";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity";
 
 export const fetchsocials = async () => {
-  const res = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL || "https://temitopedavidsite.vercel.app"
-    }/api/getSocials`
-  );
-  const data = await res.json();
-  const socials: Socials[] = data.socials;
+  const query = groq`
+    *[_type =="socials"]
+  `;
 
-  return socials;
+  const socialsData: Socials[] = await client.fetch(query);
+  return socialsData;
 };
 
 fetchsocials();

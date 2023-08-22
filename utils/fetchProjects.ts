@@ -1,15 +1,16 @@
 import { Project } from "./../typings.d";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity";
 
 export const fetchProjects = async () => {
-  const res = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL || "https://temitopedavidsite.vercel.app"
-    }/api/getProjects`
-  );
-  const data = await res.json();
-  const projects: Project[] = data.project;
+  const query = groq`
+    *[_type =="project"]{
+      ..., technologies[]->
+    }
+  `;
 
-  return projects;
+  const projectData: Project[] = await client.fetch(query);
+  return projectData;
 };
 
 fetchProjects();

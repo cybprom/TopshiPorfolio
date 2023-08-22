@@ -1,13 +1,15 @@
 import { Experience } from "./../typings.d";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity";
 
 export const fetchExperience = async () => {
-  const res = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL || "https://temitopedavidsite.vercel.app"
-    }/api/getExperience`
-  );
-  const data = await res.json();
-  const experience: Experience[] = data.experience;
+  const query = groq`
+    *[_type =="Experience"]{
+      ..., technologies[]->
+    }
+  `;
 
-  return experience;
+  const experienceData: Experience[] = await client.fetch(query);
+
+  return experienceData;
 };

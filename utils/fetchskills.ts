@@ -1,15 +1,13 @@
 import { Skill } from "../typings";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity";
 
 export const fetchskills = async () => {
-  const res = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL || "https://temitopedavidsite.vercel.app"
-    }/api/getSkills`
-  );
-  const data = await res.json();
-  const skills: Skill[] = data.skill;
+  const query = groq`
+    *[_type =="skill"]
+  `;
 
-  return skills;
+  const skillData: Skill[] = await client.fetch(query);
+  return skillData;
 };
-
 fetchskills();
