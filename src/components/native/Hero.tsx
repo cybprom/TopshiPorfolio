@@ -5,11 +5,11 @@ import temitope from "../../../public/temitope.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { pageInfo } from "../../../typings";
-import { getPageInfo, urlfor } from "../../../sanity/Sanity-utils";
+import { getPageInfo } from "../../../sanity/Sanity-utils";
 // import { urlfor } from "@/lib/sanity";
 type Props = {};
 
-export default async function Hero({}: Props) {
+export default function Hero({}: Props) {
   const [text, count] = useTypewriter({
     words: [
       `Hi My name is $temitope `,
@@ -20,8 +20,8 @@ export default async function Hero({}: Props) {
     loop: true,
     delaySpeed: 2000,
   });
-  const pageinfo = await getPageInfo();
-  console.log(pageinfo);
+  // const pageinfo = await getPageInfo();
+
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden ">
       <BackgroundCircles />
@@ -30,8 +30,8 @@ export default async function Hero({}: Props) {
         alt="temitope pciture"
         width={100}
         height={100}
-        // src={temitope}
-        src={urlfor(pageinfo?.heroImage).url()}
+        src={temitope}
+        // src={pageinfo?.heroImage}
       ></Image>
 
       <div className="z-20">
