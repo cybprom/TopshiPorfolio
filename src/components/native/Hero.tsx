@@ -5,12 +5,11 @@ import temitope from "../../../public/temitope.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { pageInfo } from "../../../typings";
+import { getPageInfo, urlfor } from "../../../sanity/Sanity-utils";
 // import { urlfor } from "@/lib/sanity";
-type Props = {
-  pageinfo?: pageInfo;
-};
+type Props = {};
 
-export default function Hero({ pageinfo }: Props) {
+export default async function Hero({}: Props) {
   const [text, count] = useTypewriter({
     words: [
       `Hi My name is $temitope `,
@@ -21,6 +20,8 @@ export default function Hero({ pageinfo }: Props) {
     loop: true,
     delaySpeed: 2000,
   });
+  const pageinfo = await getPageInfo();
+  console.log(pageinfo);
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden ">
       <BackgroundCircles />
@@ -29,14 +30,13 @@ export default function Hero({ pageinfo }: Props) {
         alt="temitope pciture"
         width={100}
         height={100}
-        src={temitope}
-        // src={urlfor(pageinfo?.heroImage).url()}
+        // src={temitope}
+        src={urlfor(pageinfo?.heroImage).url()}
       ></Image>
 
       <div className="z-20">
         <h2 className="uppercase text-gray-500 text-xs lg:text-sm pb-2 tracking-[8px] lg:tracking-[15px]">
-          {/* {pageinfo?.role} */}
-          fe dev
+          {pageinfo?.role}
         </h2>
         <h1 className="text-2xl lg:text-3xl font-semibold px-10">
           <span>{text}</span>

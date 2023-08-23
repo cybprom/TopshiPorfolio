@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Temitope from "../../../public/temitope.jpeg";
 import Image from "next/image";
 import { pageInfo } from "../../../typings";
+import { Button } from "../ui/button";
 // import { urlfor } from "@/lib/sanity";
 
 type Props = {
@@ -31,6 +32,7 @@ const About = ({ pageinfo }: Props) => {
         <h3 className="uppercase tracking-[20px] text-gray-500 text-xl">
           About
         </h3>
+
         <h4 className="text-xl font-semibold">
           Here is a
           <span className="underline decoration-[#F7BA0A]/60 tracking-[3px]">

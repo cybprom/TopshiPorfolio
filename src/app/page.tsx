@@ -12,6 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import temitope from "../../public/temitope.jpeg";
 import { Experience, Project, Skill, Socials, pageInfo } from "../../typings.d";
+import { getPageInfo } from "../../sanity/Sanity-utils";
 
 // type Props = {
 //   pageInfo: pageInfo;
