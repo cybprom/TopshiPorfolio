@@ -37,7 +37,7 @@ export default function Hero({}: Props) {
       <div className="z-20">
         <h2 className="uppercase text-gray-500 text-xs lg:text-sm pb-2 tracking-[8px] lg:tracking-[15px]">
           {/* {pageinfo?.role} */}
-          frontend dev
+          frontend devser
         </h2>
         <h1 className="text-2xl lg:text-3xl font-semibold px-10">
           <span>{text}</span>
