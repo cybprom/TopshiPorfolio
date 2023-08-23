@@ -725,7 +725,7 @@
     "@sanity/client" "^6.4.5"
     "@types/react" "^18.0.25"
 
-"@sanity/ui@^1.0.0", "@sanity/ui@^1.7.2":
+"@sanity/ui@^1.0.0", "@sanity/ui@^1.7.10", "@sanity/ui@^1.7.2":
   version "1.7.10"
   resolved "https://registry.npmjs.org/@sanity/ui/-/ui-1.7.10.tgz"
   integrity sha512-nk6mo0WkT+G8YZoQpqKF8M8bxvwYC4O9ZOZMmNbJ8jdMBE2WSuX6t+Zm02X5HICvnAziWztT8IYRAgypj/VXQQ==
