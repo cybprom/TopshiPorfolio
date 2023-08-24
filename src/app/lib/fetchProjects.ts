@@ -5,6 +5,6 @@ export async function getprojects() {
     `*[_type =="project"]{
       ..., technologies[]->
     }`,
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 3600 } }
   );
 }
