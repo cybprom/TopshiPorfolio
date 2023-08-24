@@ -14,10 +14,10 @@ function Skilltool({ skill }: Props) {
       <motion.div className="rounded-full border border-gray-500 h-20 w-20 lg:h-24 lg:w-24 filter group-hover:grayscale transition duration-300 ease-in-out">
         <Image
           src={urlFor(skill?.image).url()}
-          className="h-full w-full  object-cover "
+          className="h-full w-full  object-cover"
           alt="skillset"
-          height={40}
-          width={40}
+          height={100}
+          width={1000}
         />
       </motion.div>
 
