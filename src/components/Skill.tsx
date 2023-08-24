@@ -11,10 +11,10 @@ type Props = {
 function Skilltool({ skill }: Props) {
   return (
     <div className="group relative flex cursor-pointer">
-      <motion.div className="rounded-full border border-gray-500 h-20 w-20 lg:h-24 lg:w-24 filter group-hover:grayscale transition duration-300 ease-in-out">
+      <motion.div className="rounded-full  h-20 w-20 lg:h-24 lg:w-24 filter group-hover:grayscale transition duration-300 ease-in-out">
         <Image
           src={urlFor(skill?.image).url()}
-          className="h-full w-full  object-cover"
+          className="h-full w-full  object-cover rounded-full"
           alt="skillset"
           height={100}
           width={1000}
