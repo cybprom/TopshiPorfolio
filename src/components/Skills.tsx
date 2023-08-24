@@ -22,7 +22,7 @@ export default function Skills({ skill }: Props) {
       </h3> */}
       <div className=" grid grid-cols-4 gap-5">
         {skill.map((skill) => (
-          <Skilltool key={skill._id} skill={skill} directionleft />
+          <Skilltool key={skill._id} skill={skill} />
         ))}
       </div>
     </motion.div>

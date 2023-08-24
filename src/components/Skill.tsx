@@ -5,22 +5,13 @@ import { Skill } from "../../typings";
 import { urlFor } from "@/app/lib/ImageUrlBuilder";
 
 type Props = {
-  directionleft?: boolean;
   skill: Skill;
 };
 
-function Skilltool({ directionleft, skill }: Props) {
+function Skilltool({ skill }: Props) {
   return (
     <div className="group relative flex cursor-pointer">
-      <motion.div
-        initial={{
-          x: directionleft ? -200 : 200,
-          opacity: 0,
-        }}
-        transition={{ duration: 1.2 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        className="rounded-full border border-gray-500 h-20 w-20 lg:h-24 lg:w-24 filter group-hover:grayscale transition duration-300 ease-in-out"
-      >
+      <motion.div className="rounded-full border border-gray-500 h-20 w-20 lg:h-24 lg:w-24 filter group-hover:grayscale transition duration-300 ease-in-out">
         <Image
           src={urlFor(skill?.image).url()}
           className="h-full w-full  object-cover "
