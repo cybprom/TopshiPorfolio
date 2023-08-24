@@ -68,3 +68,4 @@ export default async function Home({}: Props) {
     </section>
   );
 }
+export const revalidate = 60;
