@@ -21,10 +21,7 @@ export default function Skills({ skill }: Props) {
         hover over a skill for proeficiency
       </h3> */}
       <div className=" grid grid-cols-4 gap-5">
-        {skill?.slice(0, skill.length / 2).map((skill) => (
-          <Skilltool key={skill._id} skill={skill} />
-        ))}
-        {skill?.slice(skill.length / 2, skill.length).map((skill) => (
+        {skill.map((skill) => (
           <Skilltool key={skill._id} skill={skill} directionleft />
         ))}
       </div>

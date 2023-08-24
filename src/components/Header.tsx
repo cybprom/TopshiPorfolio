@@ -25,6 +25,7 @@ export default function Header({ socials }: Props) {
             url={social.url}
             bgColor="transparent"
             fgColor="gray"
+            className="text-base h-2 w-2"
           />
         ))}
       </motion.div>
