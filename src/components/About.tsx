@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Temitope from "../../../public/temitope.jpeg";
+import Temitope from "../../public/temitope.jpeg";
 import Image from "next/image";
-import { pageInfo } from "../../../typings";
-import { Button } from "../ui/button";
+import { pageInfo } from "../../typings";
+
 // import { urlfor } from "@/lib/sanity";
 
 type Props = {

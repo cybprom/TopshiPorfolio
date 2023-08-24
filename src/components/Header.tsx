@@ -3,7 +3,7 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Socials } from "../../../typings";
+import { Socials } from "../../typings";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 
 type Props = {

@@ -1,18 +1,14 @@
 "use client";
 import Head from "next/head";
-import Header from "@/components/native/Header";
-import type { GetStaticProps } from "next";
-import Hero from "@/components/native/Hero";
-import About from "@/components/native/About";
-import Experiences from "@/components/native/Experiences";
-import Skills from "@/components/native/Skills";
-import Projects from "@/components/native/Projects";
-import Contact from "@/components/native/Contact";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Link from "next/link";
 import Image from "next/image";
 import temitope from "../../public/temitope.jpeg";
-import { Experience, Project, Skill, Socials, pageInfo } from "../../typings.d";
-import { getPageInfo } from "../../sanity/Sanity-utils";
+import { client } from "./lib/sanity";
+// import { Experience, Project, Skill, Socials, pageInfo } from "../../typings.d";
+// import { getPageInfo } from "../../sanity/Sanity-utils";
 
 // type Props = {
 //   pageInfo: pageInfo;
@@ -39,21 +35,21 @@ export default function Home({}: Props) {
         <About />
       </section>
       {/* experience */}
-      <section id="experience" className="snap-center">
+      {/* <section id="experience" className="snap-center">
         <Experiences />
-      </section>
+      </section> */}
       {/* skills */}
-      <section id="skills" className="snap-start">
+      {/* <section id="skills" className="snap-start">
         <Skills />
-      </section>
+      </section> */}
       {/* projects */}
-      <section id="projects" className="snap-start">
+      {/* <section id="projects" className="snap-start">
         <Projects />
-      </section>
+      </section> */}
       {/* contact me */}
-      <section id="contact" className="snap-start">
+      {/* <section id="contact" className="snap-start">
         <Contact />
-      </section>
+      </section> */}
 
       <Link href="#hero">
         <footer className="w-full sticky bottom-20 sm:bottom-5 cursor-pointer">
