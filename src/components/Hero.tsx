@@ -6,27 +6,19 @@ import temitope from "../../public/temitope.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/app/lib/sanity";
-import { use } from "react";
-// import { pageInfo } from "../../../typings";
-// import { getPageInfo } from "../../../sanity/Sanity-utils";
-import { urlFor } from "@/app/lib/ImageUrlBuilder";
-type Props = {};
+import { pageInfo } from "../../typings";
 
-export async function getPageInfo() {
-  return client.fetch(`*[_type =="pageInfo"][0]`);
-}
-export default async function Hero({}: Props) {
-  // const [text, count] = useTypewriter({
-  //   words: [
-  //     `Hi My name is $temitope `,
-  //     "I am Frontend Developer ",
-  //     "<Typescript>I Write </Typescript>",
-  //     "I love animations",
-  //   ],
-  //   loop: true,
-  //   delaySpeed: 2000,
-  // });
-  const pageinfo = await getPageInfo();
+import { urlFor } from "@/app/lib/ImageUrlBuilder";
+import Typewriter from "./Typewriter";
+type Props = {
+  pageinfo: pageInfo;
+};
+
+// export async function getPageInfo() {
+//   return client.fetch(`*[_type =="pageInfo"][0]`);
+// }
+export default async function Hero({ pageinfo }: Props) {
+  // const pageinfo = await getPageInfo();
   // console.log(pageinfo);
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden ">
@@ -46,9 +38,7 @@ export default async function Hero({}: Props) {
           {/* frontend devser */}
         </h2>
         <h1 className="text-2xl lg:text-3xl font-semibold px-10">
-          {/* <span>{text}</span> */}
-          coder
-          {/* <Cursor cursorColor="red" /> */}
+          <Typewriter />
         </h1>
 
         <div className="pt-5">

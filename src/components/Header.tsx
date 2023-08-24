@@ -7,7 +7,7 @@ import { Socials } from "../../typings";
 import { ChatBubbleLeftIcon } from "@heroicons/react/20/solid";
 
 type Props = {
-  socials?: Socials[];
+  socials: Socials[];
 };
 
 export default function Header({ socials }: Props) {
@@ -19,32 +19,14 @@ export default function Header({ socials }: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center "
       >
-        {/* {socials.map((social) => (
+        {socials.map((social) => (
           <SocialIcon
             key={social._id}
             url={social.url}
             bgColor="transparent"
             fgColor="gray"
           />
-        ))} */}
-        <SocialIcon
-          // key={social._id}
-          url="https://www.instagram.com/topshi__/"
-          bgColor="transparent"
-          fgColor="gray"
-        />
-        <SocialIcon
-          // key={social._id}
-          url="https://www.instagram.com/topshi__/"
-          bgColor="transparent"
-          fgColor="gray"
-        />
-        <SocialIcon
-          // key={social._id}
-          url="https://www.instagram.com/topshi__/"
-          bgColor="transparent"
-          fgColor="gray"
-        />
+        ))}
       </motion.div>
 
       <Link href="#contact">

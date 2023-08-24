@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Temitope from "../../public/temitope.jpeg";
+
 import Image from "next/image";
 import { pageInfo } from "../../typings";
-
-// import { urlfor } from "@/lib/sanity";
+import { urlFor } from "@/app/lib/ImageUrlBuilder";
 
 type Props = {
-  pageinfo?: pageInfo;
+  pageinfo: pageInfo;
 };
 
 const About = ({ pageinfo }: Props) => {
@@ -24,8 +23,7 @@ const About = ({ pageinfo }: Props) => {
         alt="temitope picture"
         height={100}
         width={1000}
-        src={Temitope}
-        // src={urlfor(pageinfo?.profilePic).url()}
+        src={urlFor(pageinfo?.profilePic).url()}
       />
 
       <div className="space-y-6 px-0 md:px-10">
@@ -41,13 +39,7 @@ const About = ({ pageinfo }: Props) => {
           </span>
           Background
         </h4>
-        {/* <p>{pageinfo?.backgroundInformation}</p> */}
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolores
-          repudiandae expedita a velit id inventore cum accusantium commodi
-          temporibus sed, saepe reiciendis. Nihil adipisci accusantium numquam.
-          Est, impedit velit.
-        </p>
+        <p>{pageinfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

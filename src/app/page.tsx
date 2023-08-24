@@ -1,4 +1,3 @@
-"use client";
 import Head from "next/head";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -7,8 +6,17 @@ import Link from "next/link";
 import Image from "next/image";
 import temitope from "../../public/temitope.jpeg";
 import { client } from "./lib/sanity";
+import Cursor from "@/components/Cursor";
+import { getPageInfo } from "./lib/fetchpageinfo";
+import { getsocials } from "./lib/fetchSocials";
+import { getExperience } from "./lib/fetchExperience";
+import Experiences from "@/components/Experiences";
+import { getskills } from "./lib/fetchskills";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import { getprojects } from "./lib/fetchProjects";
+import Contact from "@/components/Contact";
 // import { Experience, Project, Skill, Socials, pageInfo } from "../../typings.d";
-// import { getPageInfo } from "../../sanity/Sanity-utils";
 
 // type Props = {
 //   pageInfo: pageInfo;
@@ -19,51 +27,44 @@ import { client } from "./lib/sanity";
 // };
 type Props = {};
 
-export default function Home({}: Props) {
+export default async function Home({}: Props) {
+  const pageinfo = await getPageInfo();
+  const socials = await getsocials();
+  const experience = await getExperience();
+  const skill = await getskills();
+  const project = await getprojects();
   return (
     <section className="bg-[rgb(36,36,36)] scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 text-white snap-y snap-mandatory  z-0 h-screen w-screen overflow-y-scroll overflow-x-hidden">
       <Head>
         <title className="">Temitope portfolio</title>
       </Head>
-      <Header />
-      {/* hero */}
+      <Header socials={socials} />
+
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero pageinfo={pageinfo} />
       </section>
-      {/* about */}
+
       <section id="about" className="snap-center">
-        <About />
+        <About pageinfo={pageinfo} />
       </section>
       {/* experience */}
-      {/* <section id="experience" className="snap-center">
-        <Experiences />
-      </section> */}
+      <section id="experience" className="snap-center">
+        <Experiences experience={experience} />
+      </section>
       {/* skills */}
-      {/* <section id="skills" className="snap-start">
-        <Skills />
-      </section> */}
+      <section id="skills" className="snap-start">
+        <Skills skill={skill} />
+      </section>
       {/* projects */}
-      {/* <section id="projects" className="snap-start">
-        <Projects />
-      </section> */}
+      <section id="projects" className="snap-start">
+        <Projects project={project} />
+      </section>
       {/* contact me */}
-      {/* <section id="contact" className="snap-start">
-        <Contact />
-      </section> */}
+      <section id="contact" className="snap-start">
+        <Contact pageinfo={pageinfo} />
+      </section>
 
-      <Link href="#hero">
-        <footer className="w-full sticky bottom-20 sm:bottom-5 cursor-pointer">
-          <div className="items-center flex  justify-center">
-            <Image
-              src={temitope}
-              alt="temitope image"
-              height={20}
-              width={20}
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 "
-            />
-          </div>
-        </footer>
-      </Link>
+      <Cursor />
     </section>
   );
 }
