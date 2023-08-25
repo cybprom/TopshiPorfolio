@@ -16,7 +16,7 @@ function Projects({ project }: Props) {
       transition={{ duration: 1.2 }}
       className="h-screen relative flex overflow-hidden flex-col text-left  mx-auto items-center"
     >
-      <div className="w-full max-w-7xl mt-24">
+      <div className="w-full max-w-7xl absolute top-[15%] lg:top-[30%]">
         <div>
           <span className="uppercase  gap-x-2 text-gray-500   text-xl lg:text-3xl font-[900] stroke-text stroke ">
             03.
