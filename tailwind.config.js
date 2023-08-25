@@ -16,6 +16,12 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        neu: ["var(--font-neu)"],
+        tomato: ["--font-tomato", "system ui"],
+        rale: ["Raleway", "serif"],
+        Montserrat: ["Montserrat" ,"serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

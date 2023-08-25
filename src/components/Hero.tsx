@@ -10,51 +10,66 @@ import { pageInfo } from "../../typings";
 
 import { urlFor } from "@/app/lib/ImageUrlBuilder";
 import Typewriter from "./Typewriter";
+import localFont from "next/font/local";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
+
 type Props = {
   pageinfo: pageInfo;
 };
 
-// export async function getPageInfo() {
-//   return client.fetch(`*[_type =="pageInfo"][0]`);
-// }
 export default async function Hero({ pageinfo }: Props) {
-  // const pageinfo = await getPageInfo();
-  // console.log(pageinfo);
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden ">
-      <BackgroundCircles />
-      <Image
-        className="relative h-32 w-32 mx-auto rounded-full object-cover"
-        alt="temitope pciture"
-        width={100}
-        height={100}
-        // src={temitope}
-        src={urlFor(pageinfo?.heroImage).url()}
-      ></Image>
-
-      <div className="z-20">
-        <h2 className="uppercase text-gray-500 text-xs lg:text-sm pb-2 tracking-[8px] lg:tracking-[15px]">
-          {pageinfo?.role}
-          {/* frontend devser */}
-        </h2>
-        <h1 className="text-2xl lg:text-3xl font-semibold px-10">
-          <Typewriter />
+    <div className="h-screen flex flex-col-reverse gap-y-20 md:flex-row space-y-8 items-center justify-center text-center overflow-hidden ">
+      <div className="flex flex-col gap-y-3 w-full">
+        <h1
+          className={`font-neu font-extrabold leading-none xl:text-[110px] lg:text-[80px] md:text-[64px] sm:text-[50px] mb-[20px] text-[42px] `}
+        >
+          <span> {pageinfo?.role.split(" ")[0]} </span>
+          <br className="sm:hidden 2xl:inline font-extrabold" />
+          {pageinfo?.role.split(" ")[1]}
         </h1>
+        <Link
+          href="#projects"
+          className="flex lg:w-1/2 lg:ml-12 items-center  justify-center "
+        >
+          <span className="font-bolc text-sm md:text-xl animate-pulse">
+            check out my work
+          </span>{" "}
+          <ArrowRightIcon className="h-3 w-6" />
+        </Link>
+      </div>
 
-        <div className="pt-5">
-          <Link href="#about">
-            <button className="HeroButtonClass">About</button>
-          </Link>
-          <Link href="#skills">
-            <button className="HeroButtonClass">skills</button>
-          </Link>
-          <Link href="#experience">
-            <button className="HeroButtonClass">Experience</button>
-          </Link>
+      <div className="w-full flex items-start justify-center">
+        <div className="flex flex-col items-center justify-center">
+          <BackgroundCircles />
+          <Image
+            className="relative h-56 w-56 mx-auto rounded-xl object-cover"
+            alt="temitope pciture"
+            width={1000}
+            height={1000}
+            src={urlFor(pageinfo?.heroImage).url()}
+          ></Image>
+          <h1 className="text-2xl lg:text-3xl font-semibold px-4 lg:px-8 mt-3">
+            <Typewriter name={pageinfo?.name} role={pageinfo?.role} />
+          </h1>
 
-          <Link href="#projects">
-            <button className="HeroButtonClass">projects</button>
-          </Link>
+          <div className="z-20">
+            {/* <h2 className="capitalize  text-sm text-gray-400 pb-2 tracking-[8px] lg:tracking-[15px]">
+            {pageinfo?.role}
+          </h2> */}
+
+            <div className="pt-5 lg:flex lg:gap-x-2 md:gap-x-6">
+              <Link href="#about">
+                <button className="HeroButtonClass">About</button>
+              </Link>
+              <Link href="#skills">
+                <button className="HeroButtonClass">skills</button>
+              </Link>
+              <Link href="#experience">
+                <button className="HeroButtonClass">Experience</button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

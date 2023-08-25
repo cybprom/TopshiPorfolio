@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;800&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Montserrat:ital,wght@0,200;0,600;0,700;0,900;1,500;1,600;1,700;1,800&family=Poppins:wght@100;200;300;400&family=Raleway:ital,wght@0,100;0,300;0,600;0,700;0,800;0,900;1,500;1,700&family=Satisfy&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- @layer components {
+@layer components {
   .HeroButtonClass {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all cursor-pointer hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40;
   }
@@ -10,6 +11,15 @@
     @apply outline-none bg-slate-400/10 placeholder:text-gray-500 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 transition-all focus:text-[#F7BA0A] hover:border-[#F7BA0A]/10;
   }
 }
+.stroke {
+  margin-bottom: 8px;
+  font-size: 50px;
+}
+.stroke-text {
+  -webkit-text-fill-color: #242424;
+  -webkit-text-stroke-width: 1.8px;
+  -webkit-text-stroke-color: white;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -17,63 +27,63 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;

@@ -23,7 +23,7 @@ function Projects({ project }: Props) {
             className=" w-screen flex-shrink-0 flex snap-center flex-col space-y-5 items-center p-3 lg:p-20  justify-center md:p-44 h-screen"
           >
             <motion.div
-              className=""
+              className="h-[200px] w-[400px]"
               initial={{ y: -300, opacity: 0 }}
               transition={{ duration: 1.2 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -31,20 +31,21 @@ function Projects({ project }: Props) {
             >
               <Image
                 src={urlFor(projects?.image).url()}
-                height={200}
-                width={200}
+                height={1000}
+                width={1000}
                 alt="project images"
+                className=" h-full w-full object-fit"
               />
             </motion.div>
 
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+            <div className="space-y-10 px-0 md:px-10 max-w-6xl font-Montserrat">
               <h4 className="text-xl text-center font-semibold">
-                <span className="underline decoration-[#F7AB0A]/50">
-                  Case Study {i + 1} of {project.length}
+                <span className="underline decoration-[#F7AB0A]/50 ">
+                  Project {i + 1} of {project.length}
                 </span>
                 : {projects?.title}
               </h4>
-              <p className="  text-sm lg:text-lg text-center md:text-left">
+              <p className="text-sm lg:text-lg text-center md:text-left tracking-tight  leading-[24px] md:leading-[40px]">
                 {projects?.summary}
               </p>
             </div>

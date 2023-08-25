@@ -16,15 +16,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import { getprojects } from "./lib/fetchProjects";
 import Contact from "@/components/Contact";
-// import { Experience, Project, Skill, Socials, pageInfo } from "../../typings.d";
 
-// type Props = {
-//   pageInfo: pageInfo;
-//   experience: Experience[];
-//   skill: Skill[];
-//   project: Project[];
-//   socials: Socials[];
-// };
 type Props = {};
 
 export default async function Home({}: Props) {
@@ -34,7 +26,7 @@ export default async function Home({}: Props) {
   const skill = await getskills();
   const project = await getprojects();
   return (
-    <section className="bg-[rgb(36,36,36)] scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 text-white snap-y snap-mandatory  z-0 h-screen w-screen overflow-y-scroll overflow-x-hidden">
+    <section className="bg-[#242424] scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 text-white snap-y snap-mandatory  z-0 h-screen w-screen overflow-y-scroll overflow-x-hidden">
       <Head>
         <title className="">Temitope portfolio</title>
       </Head>
@@ -63,8 +55,9 @@ export default async function Home({}: Props) {
       <section id="contact" className="snap-start">
         <Contact pageinfo={pageinfo} />
       </section>
-
-      <Cursor />
+      <footer className="w-full sticky bottom-20 sm:bottom-5 cursor-pointer right-2">
+        <Cursor />
+      </footer>
     </section>
   );
 }

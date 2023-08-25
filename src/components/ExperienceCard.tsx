@@ -3,12 +3,12 @@ import React from "react";
 import { Experience } from "../../typings";
 import { urlFor } from "@/app/lib/ImageUrlBuilder";
 
-type Props = { experience: Experience };
+type Props = { experience: Experience; index: number };
 
-export default function ExperienceCard({ experience }: Props) {
+export default function ExperienceCard({ experience, index }: Props) {
   return (
-    <article className="flex relative mt-10 flex-col rounded-lg items-center space-y-3 w-full flex-shrink-0 md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 lg:opacity-40 lg:hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
-      <h3 className="  top-0  left-0 absolute uppercase tracking-[5px] p-4 text-gray-500 text-xs lg:text-xs ">
+    <article className="flex relative flex-col rounded-lg items-center space-y-3 w-full flex-shrink-0 md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 lg:opacity-40 lg:hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
+      <h3 className=" top-0  left-0 absolute uppercase tracking-[5px]  p-4 text-gray-500 text-xs lg:text-xs ">
         Experience
       </h3>
       <Image
@@ -20,7 +20,7 @@ export default function ExperienceCard({ experience }: Props) {
       />
 
       <div className=" px-0 md:px-10">
-        <h4 className="text-2xl font-light capitalize mb-2">
+        <h4 className="text-2xl font-light capitalize mb-2 font-Montserrat">
           {experience.company}
         </h4>
         <h4 className="font-bold text-xl mt-1 mb-2">{experience.jobTitle}</h4>
@@ -42,7 +42,7 @@ export default function ExperienceCard({ experience }: Props) {
             ? "present"
             : new Date(experience?.dateEnded).toDateString()}
         </p>
-        <ul className="list-disc space-y-2 ml-5 text-xs md:text-lg">
+        <ul className="list-disc space-y-2 ml-5 text-xs md:text-lg font-Montserrat">
           {experience.points.map((point, i) => (
             <li key={i}> {point}</li>
           ))}
