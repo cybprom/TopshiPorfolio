@@ -27,7 +27,7 @@ const About = ({ pageinfo }: Props) => {
       />
 
       <div className="space-y-6 px-0 md:px-10 mt-8">
-        <div className="flex items-center">
+        <div className="flex items-center justify-center lg:justify-start">
           <h3 className="uppercase mt-2  text-gray-500   text-xl lg:text-3xl font-[900] stroke-text stroke  ">
             01.
           </h3>

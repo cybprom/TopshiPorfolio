@@ -38,7 +38,7 @@ export default function ExperienceCard({ experience, index }: Props) {
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300 text-sm md:text-xl">
+        <p className="uppercase py-5 text-gray-300 text-xs sm:text-sm md:text-xl">
           {new Date(experience?.dateStarted).toDateString()} -
           {experience.isCurrentlyWorkingHere
             ? "present"

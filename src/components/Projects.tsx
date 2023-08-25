@@ -14,8 +14,18 @@ function Projects({ project }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
-      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row justify-evenly mx-auto items-center"
+      className="h-screen relative flex overflow-hidden flex-col text-left  mx-auto items-center"
     >
+      <div className="w-full max-w-7xl mt-24">
+        <div>
+          <span className="uppercase  gap-x-2 text-gray-500   text-xl lg:text-3xl font-[900] stroke-text stroke ">
+            03.
+          </span>
+          <span className="text-3xl md:text-4xl font-extrabold capitalize">
+            Project
+          </span>
+        </div>
+      </div>
       <div className="relative w-full scrollbar-thin flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 ">
         {project.map((projects, i) => (
           <div
