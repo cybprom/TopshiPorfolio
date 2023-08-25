@@ -23,7 +23,9 @@ export default function ExperienceCard({ experience, index }: Props) {
         <h4 className="text-2xl font-light capitalize mb-2 font-Montserrat">
           {experience.company}
         </h4>
-        <h4 className="font-bold text-xl mt-1 mb-2">{experience.jobTitle}</h4>
+        <h4 className="font-bold text-base lg:text-xl mt-1 mb-2">
+          {experience.jobTitle}
+        </h4>
         <div className="flex lg:space-x-3 my-1">
           {experience?.technologies.map((tech) => (
             <Image
@@ -36,13 +38,13 @@ export default function ExperienceCard({ experience, index }: Props) {
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">
+        <p className="uppercase py-5 text-gray-300 text-sm md:text-xl">
           {new Date(experience?.dateStarted).toDateString()} -
           {experience.isCurrentlyWorkingHere
             ? "present"
             : new Date(experience?.dateEnded).toDateString()}
         </p>
-        <ul className="list-disc space-y-2 ml-5 text-xs md:text-lg font-Montserrat">
+        <ul className="list-disc space-y-2 ml-5 text-xs md:text-base font-Montserrat">
           {experience.points.map((point, i) => (
             <li key={i}> {point}</li>
           ))}

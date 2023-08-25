@@ -27,9 +27,14 @@ const About = ({ pageinfo }: Props) => {
       />
 
       <div className="space-y-6 px-0 md:px-10 mt-8">
-        <h3 className="uppercase  text-gray-500 text-2xl lg:text-4xl font-[900] stroke-text stroke  ">
-          01. About
-        </h3>
+        <div className="flex items-center">
+          <h3 className="uppercase mt-2  text-gray-500   text-xl lg:text-3xl font-[900] stroke-text stroke  ">
+            01.
+          </h3>
+          <span className="text-4xl  font-extrabold capitalize md:text-4xl text-white">
+            About
+          </span>
+        </div>
 
         <h4 className=" tracking-wide text-xl font-semibold mt-3 font-Montserrat ">
           Here is a
