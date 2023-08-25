@@ -8,10 +8,7 @@ const neue = localFont({
       path: "../../public/Neue/NeueMachina-Regular.otf",
       weight: "400",
     },
-    {
-      path: "../../public/Neue/NeueMachina-light.otf",
-      weight: "700",
-    },
+
     {
       path: "../../public/Neue/NeueMachina-Ultrabold.otf",
       weight: "900",
