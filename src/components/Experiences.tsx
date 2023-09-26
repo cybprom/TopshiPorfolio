@@ -28,13 +28,14 @@ function Experiences({ experience }: Props) {
         <div className="overflow-hidden max-w-full">
           <div className="w-full flex space-x-2 md:space-x-7 lg:p-10 overflow-x-scroll snap-x snap-mandatory  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60">
             {/* experience cards */}
-            {experience.map((experience, i) => (
+            {/* {experience.map((experience, i) => (
               <ExperienceCard
                 key={experience?._id}
                 experience={experience}
                 index={i}
               />
-            ))}
+            ))} */}
+            {/* <ExperienceCard /> */}
           </div>
         </div>
       </motion.div>

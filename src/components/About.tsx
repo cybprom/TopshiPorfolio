@@ -20,10 +20,10 @@ const About = ({ pageinfo }: Props) => {
     >
       <Image
         className="mt-14 md:mb-0  w-[300px] h-[300px] bg-center flex xl:w-[500px] xl:h-[500px] flex-shrink-0  rounded-full object-cover md:rounded-lg "
-        alt="temitope picture"
+        alt="ilerioluwa picture"
         height={100}
         width={1000}
-        src={urlFor(pageinfo?.profilePic).url()}
+        src="/ilerioluwa.jpg"
       />
 
       <div className="space-y-6 px-0 md:px-10 mt-8">
@@ -31,7 +31,7 @@ const About = ({ pageinfo }: Props) => {
           <h3 className="uppercase mt-2  text-gray-500   text-xl lg:text-3xl font-[900] stroke-text stroke  ">
             01.
           </h3>
-          <span className="text-4xl  font-extrabold capitalize md:text-4xl text-white">
+          <span className="text-4xl ml-3  font-extrabold capitalize md:text-4xl text-white">
             About
           </span>
         </div>
@@ -41,10 +41,15 @@ const About = ({ pageinfo }: Props) => {
           <span className="underline mx-2 tracking-tighter decoration-[#F7BA0A]/60">
             Little
           </span>
-          Background
+          About Me
         </h4>
         <p className="tracking-tight font-Montserrat font-medium text-sm md:text-xl leading-[24px] md:leading-[40px]">
-          {pageinfo?.backgroundInformation}
+          Hey there, I'm Akintunde Ilerioluwa, a passionate frontend developer.
+          I'm an ambitious, driven and curious person who is always eager to
+          learn new things. I'm constantly looking for opportunities to do
+          better and achieve greatness. I'm proficient in working with
+          technologies such as HTML, CSS, SCSS, Tailwind, Javascript, Next.JS. I
+          also have interest in CyberSecurity and Blockchain.
         </p>
       </div>
     </motion.div>

@@ -6,8 +6,8 @@ type Props = { name: string; role: string };
 export default function Typewriter({ name, role }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      `Hi My name is ${name} `,
-      `I Am ${role} `,
+      `Hi My name is Akintunde Ilerioluwa `,
+      `I Am Frontend Developer`,
       "with a drive of building meaningful products",
       "that people love using",
     ],

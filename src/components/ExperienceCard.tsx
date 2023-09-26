@@ -14,14 +14,14 @@ export default function ExperienceCard({ experience, index }: Props) {
       <Image
         height={100}
         width={100}
-        src={urlFor(experience?.companyImage).url()}
+        src={}
         alt="company image"
         className="h-20 w-20 rounded-full xl:w-[100px] xl:h-[100px] objext-cover object-center"
       />
 
       <div className=" px-0 md:px-10">
         <h4 className="text-2xl font-light capitalize mb-2 font-Montserrat">
-          {experience.company}
+          RareSkills
         </h4>
         <h4 className="font-bold text-base lg:text-xl mt-1 mb-2">
           {experience.jobTitle}

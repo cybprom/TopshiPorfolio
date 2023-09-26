@@ -15,7 +15,7 @@ interface IFormInput {
 const Contact = ({ pageinfo }: Props) => {
   const { register, handleSubmit } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    window.location.href = `mailto:temi236topemicheal@gmail.com?subject=${data.subject}&body= hi my name is ${data.name}, ${data.message} ${data.email}`;
+    window.location.href = `mailto:ilerioluwac@gmail.com?subject=${data.subject}&body= hi my name is ${data.name}, ${data.message} ${data.email}`;
   };
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl  px-4 lg:px-10 justify-evenly mx-auto items-center">
@@ -29,15 +29,15 @@ const Contact = ({ pageinfo }: Props) => {
         <div className="space-y-4">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-yellow-800 animate-pulse h-7 w-7 " />
-            <p className="text-xl">{pageinfo.phoneNumber}</p>
+            <p className="text-xl">+2347069275553</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-yellow-800 animate-pulse h-7 w-7 " />
-            <p className="text-xl capitalize">{pageinfo?.Address}</p>
+            <p className="text-xl capitalize">Lagos Nigeria</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-yellow-800 animate-pulse h-7 w-7 " />
-            <p className="text-xl capitalize">{pageinfo.Email}</p>
+            <p className="text-xl capitalize">ilerioluwac@gmail.com</p>
           </div>
         </div>
 

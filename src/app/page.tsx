@@ -28,7 +28,7 @@ export default async function Home({}: Props) {
   return (
     <section className="bg-[#242424] scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7BA0A]/60 text-white snap-y snap-mandatory  z-0 h-screen w-screen overflow-y-scroll overflow-x-hidden">
       <Head>
-        <title className="">Temitope portfolio</title>
+        <title className="">Cybprom portfolio</title>
       </Head>
       <Header socials={socials} />
 
@@ -41,7 +41,7 @@ export default async function Home({}: Props) {
       </section>
       {/* experience */}
       <section id="experience" className="snap-center">
-        <Experiences experience={experience} />
+        {/* <Experiences experience={experience} /> */}
       </section>
       {/* skills */}
       <section id="skills" className="snap-start">

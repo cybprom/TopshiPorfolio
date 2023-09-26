@@ -19,7 +19,7 @@ export default function Header({ socials }: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center gap-x-1"
       >
-        {socials.map((social) => (
+        {/* {socials.map((social) => (
           <SocialIcon
             key={social._id}
             url={social.url}
@@ -27,7 +27,28 @@ export default function Header({ socials }: Props) {
             fgColor="gray"
             className="text-base h-3 w-3"
           />
-        ))}
+        ))} */}
+        <SocialIcon
+          network="twitter"
+          url="https://twitter.com/cybprom"
+          bgColor="transparent"
+          fgColor="gray"
+          className="text-base h-3 w-3"
+        />
+        <SocialIcon
+          network="github"
+          url="https://github.com/cybprom"
+          bgColor="transparent"
+          fgColor="gray"
+          className="text-base h-3 w-3"
+        />
+        <SocialIcon
+          network="linkedin"
+          url="https://www.linkedin.com/in/ilerioluwa-akintunde-2934a2221"
+          bgColor="transparent"
+          fgColor="gray"
+          className="text-base h-3 w-3"
+        />
       </motion.div>
 
       <Link href="#contact">
