@@ -44,13 +44,12 @@ const About = ({ pageinfo }: Props) => {
           About Me
         </h4>
         <p className="tracking-tight font-Montserrat font-medium text-sm md:text-xl leading-[24px] md:leading-[40px]">
-          Hey there, I&apos;m Akintunde Ilerioluwa, a passionate frontend
-          developer. I&apos;m an ambitious, driven and curious person who is
-          always eager to learn new things. I&apos;m constantly looking for
-          opportunities to do better and achieve greatness. I&apos;m proficient
-          in working with technologies such as HTML, CSS, SCSS, Tailwind,
-          Javascript, Next.JS. I also have interest in CyberSecurity and
-          Blockchain.
+          Hey there, I am Akintunde Ilerioluwa, a passionate frontend developer.
+          I am an ambitious, driven and curious person who is always eager to
+          learn new things. I am constantly looking for opportunities to do
+          better and achieve greatness. I am proficient in working with
+          technologies such as HTML, CSS, SCSS, Tailwind, Javascript, Next.JS. I
+          also have interest in CyberSecurity and Blockchain.
         </p>
       </div>
     </motion.div>
