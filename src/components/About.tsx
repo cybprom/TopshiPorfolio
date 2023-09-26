@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import Image from "next/image";
 import { pageInfo } from "../../typings";
-import { urlFor } from "@/app/lib/ImageUrlBuilder";
+// import { urlFor } from "@/app/lib/ImageUrlBuilder";
 
 type Props = {
   pageinfo: pageInfo;

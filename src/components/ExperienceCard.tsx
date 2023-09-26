@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Experience } from "../../typings";
-import { urlFor } from "@/app/lib/ImageUrlBuilder";
+// import { urlFor } from "@/app/lib/ImageUrlBuilder";
 
 type Props = { experience: Experience; index: number };
 
@@ -33,7 +33,7 @@ export default function ExperienceCard({ experience, index }: Props) {
               className=" h-5 w-5 lg:h-8 lg:w-8 rounded-full"
               height={100}
               width={100}
-              src={urlFor(tech?.image).url()}
+              src="/"
               alt="skill sets"
             />
           ))}
