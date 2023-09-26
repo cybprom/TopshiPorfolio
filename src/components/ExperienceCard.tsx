@@ -14,7 +14,7 @@ export default function ExperienceCard({ experience, index }: Props) {
       <Image
         height={100}
         width={100}
-        src={}
+        src="ilerioluwa.jpg"
         alt="company image"
         className="h-20 w-20 rounded-full xl:w-[100px] xl:h-[100px] objext-cover object-center"
       />
