@@ -12,7 +12,7 @@ interface IFormInput {
   message: string;
 }
 
-const Contact = ({ pageinfo }: Props) => {
+const Contact = () => {
   const { register, handleSubmit } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     window.location.href = `mailto:ilerioluwac@gmail.com?subject=${data.subject}&body= hi my name is ${data.name}, ${data.message} ${data.email}`;

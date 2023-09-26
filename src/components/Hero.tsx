@@ -2,13 +2,13 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import temitope from "../../public/temitope.jpeg";
+// import temitope from "../../public/temitope.jpeg";
 import Image from "next/image";
 import Link from "next/link";
-import { client } from "@/app/lib/sanity";
+// import { client } from "@/app/lib/sanity";
 import { pageInfo } from "../../typings";
 
-import { urlFor } from "@/app/lib/ImageUrlBuilder";
+// import { urlFor } from "@/app/lib/ImageUrlBuilder";
 import Typewriter from "./Typewriter";
 import localFont from "next/font/local";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
@@ -17,16 +17,18 @@ type Props = {
   pageinfo: pageInfo;
 };
 
-export default async function Hero({ pageinfo }: Props) {
+export default async function Hero() {
   return (
     <div className="h-screen flex flex-col-reverse gap-y-20 md:flex-row space-y-8 items-center justify-center text-center overflow-hidden ">
       <div className="flex flex-col gap-y-3 w-full">
         <h1
           className={`font-neu font-extrabold leading-none xl:text-[110px] lg:text-[80px] md:text-[64px] sm:text-[50px] mb-[20px] text-[42px] `}
         >
-          <span> {pageinfo?.role.split(" ")[0]} </span>
-          <br className="sm:hidden 2xl:inline font-extrabold" />
-          {pageinfo?.role.split(" ")[1]}
+          {/* <span> {pageinfo?.role.split(" ")[0]} </span> */}
+          <span>Frontend</span> <br />
+          <br className="sm:hidden 2xlinline font-extrabold" />
+          {/* {pageinfo?.role.split(" ")[1]} */}
+          Developer
         </h1>
         <Link
           href="#projects"
@@ -50,7 +52,8 @@ export default async function Hero({ pageinfo }: Props) {
             src="/ilerioluwa.jpg"
           ></Image>
           <h1 className="text-2xl lg:text-3xl font-semibold px-4 lg:px-8 mt-3">
-            <Typewriter name={pageinfo?.name} role={pageinfo?.role} />
+            {/* <Typewriter name={pageinfo?.name} role={pageinfo?.role} /> */}
+            Akintunde Ilerioluwa
           </h1>
 
           <div className="z-20">

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 type Props = { skill: Skill[] };
 
-export default function Skills({ skill }: Props) {
+export default function Skills() {
   return (
     <motion.div
       initial={{ opacity: 0 }}

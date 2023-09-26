@@ -1,5 +1,5 @@
-import { client } from "./sanity";
+// import { client } from "./sanity";
 
-export async function getsocials() {
-  return client.fetch(`*[_type =="socials"]`, { next: { revalidate: 60 } });
-}
+// export async function getsocials() {
+//   return client.fetch(`*[_type =="socials"]`, { next: { revalidate: 60 } });
+// }

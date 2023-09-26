@@ -8,7 +8,7 @@ import { Project } from "../../typings";
 
 type Props = { project: Project[] };
 
-function Projects({ project }: Props) {
+function Projects() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
